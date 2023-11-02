@@ -8,6 +8,7 @@ public class Creator : MonoBehaviour
     [SerializeField] Transform _spawner;
     [SerializeField] Ball _ballPrefab;
     [SerializeField] CollapseManager _collapseManager;
+    [SerializeField] RayDown _rayMat;
 
     Ball _ballInTube;
     Ball _ballInSpawner;
@@ -36,6 +37,11 @@ public class Creator : MonoBehaviour
         _ballInTube.SetLevel(ballLevel);
         _ballInTube.SetToTube();
         _ballInTube.Init(_collapseManager);
+        
+        if (_ballInSpawner)
+        {
+            _rayMat.SetData(_ballInSpawner.level,_ballInSpawner.radius);
+        }    
     }
 
     IEnumerator MoveToSpawner()

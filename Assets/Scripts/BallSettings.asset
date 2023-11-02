@@ -24,3 +24,15 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 49ff80d89cab1d040a91e149c8d193ee, type: 2}
   - {fileID: 2100000, guid: b6815c84ff7cc1f4baaf33ff676565e2, type: 2}
   - {fileID: 2100000, guid: 0f49dadd73869ab49867fd8e87e5fde3, type: 2}
+  rayPointMaterials:
+  - {fileID: 2100000, guid: 5e5eed3c349fe3349afa2cddd25bbf47, type: 2}
+  - {fileID: 2100000, guid: 56975c7a2c1dd524983e5fc8acb4746f, type: 2}
+  - {fileID: 2100000, guid: 4f0a05d1baabc2243b2bb89febabd965, type: 2}
+  - {fileID: 2100000, guid: 5319faf7bdfe8e9418dcc51a67fb58d6, type: 2}
+  - {fileID: 2100000, guid: 0d9aa91d5b73bd04ab7701a9fa7ebedd, type: 2}
+  - {fileID: 2100000, guid: 40346b0a1efae614d94d017105de35f8, type: 2}
+  - {fileID: 2100000, guid: 2814dd752674d624abb4e1ef0e186b82, type: 2}
+  - {fileID: 2100000, guid: abae230db88c2ec4096d5eaf69b2c0e5, type: 2}
+  - {fileID: 2100000, guid: 9fcce228d7352ac4d9ff432bd7b4914e, type: 2}
+  - {fileID: 2100000, guid: 8e89f83849d4ad34aba9b23ce5ca99ba, type: 2}
+  - {fileID: 2100000, guid: bb426c26194f4d942be1255b826c4b34, type: 2}
