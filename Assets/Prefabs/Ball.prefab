@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -196,7 +196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 87bd8a42864a97540bbb0a032b0552e0, type: 2}
+  - {fileID: 2100000, guid: 44fda7c39a6bc3c489e5684ce0aa49a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,7 +265,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.92, y: 0.92, z: 0.92}
+  m_LocalScale: {x: 0.86, y: 0.86, z: 0.86}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 458327202615805210}
@@ -382,15 +382,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  radius: 0.46
   active: 1
-  _visualTransform: {fileID: 7443574827487035263}
   _text: {fileID: 5776950431393039219}
   _collider: {fileID: 4207086019379348945}
   _trigger: {fileID: 8026616631938493612}
+  _rigidbody: {fileID: 8607022687331426095}
+  radius: 0.43
+  _visualTransform: {fileID: 7443574827487035263}
   _renderer: {fileID: 1302959598729782551}
   _ballSettings: {fileID: 11400000, guid: 1920f91eaff43fc40bd593d72dca4cd3, type: 2}
-  _rigidbody: {fileID: 8607022687331426095}
 --- !u!54 &8607022687331426095
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -571,7 +571,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.46
+  m_Radius: 0.43
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7985867310564153034
 GameObject:
@@ -624,5 +624,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.56
+  m_Radius: 0.53000003
   m_Center: {x: 0, y: 0, z: 0}

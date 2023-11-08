@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class CollapseManager : MonoBehaviour
 {
-    public void Collapse(Ball ballA, Ball ballB)
+    private void Awake()
     {
-        StartCoroutine(CollapseProcess(ballA, ballB));
+        ActiveItem[] activeItems = FindObjectsOfType<ActiveItem>();
+        foreach (ActiveItem item in activeItems) 
+        {
+            item.Init(this);
+        }
+    }
+    public void Collapse(ActiveItem activeItemA, ActiveItem actibeItemB)
+    {
+        StartCoroutine(CollapseProcess(activeItemA, actibeItemB));
     }
 
-    IEnumerator CollapseProcess(Ball ballA, Ball ballB)
+    IEnumerator CollapseProcess(ActiveItem acitiveItemA, ActiveItem activeItemB)
     {
-        Vector3 startPosition = ballA.transform.position;
-        ballA.Deactivate();
+        Vector3 startPosition = acitiveItemA.transform.position;
+        acitiveItemA.Deactivate();
         for (float t = 0; t < 1f; t += Time.deltaTime / 0.3f)
         {
-            ballA.transform.position = Vector3.Lerp(startPosition, ballB.transform.position, t);
+            acitiveItemA.transform.position = Vector3.Lerp(startPosition, activeItemB.transform.position, t);
             yield return null;
         }
-        Destroy(ballA.gameObject);
-        ballB.IncreaseLever();
+        Destroy(acitiveItemA.gameObject);
+
+        activeItemB.DoEffect();       
     }
+
+    
 }
