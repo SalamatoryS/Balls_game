@@ -60,7 +60,7 @@ public class Ball : ActiveItem
     }
     private void AffectPassiveItems(Vector3 position, float radius)
     {
-        Collider[] colliders = Physics.OverlapSphere(position, radius);
+        Collider[] colliders = Physics.OverlapSphere(position, radius + 0.15f);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].attachedRigidbody)

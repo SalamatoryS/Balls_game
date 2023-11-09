@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef67862522fb286468b75ce523d70262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dieEffect: {fileID: 0}
+  _dieEffect: {fileID: 2031947712231836720, guid: 85edcc0f425191f46a383fc8476472a9,
+    type: 3}
   _stonePrefab: {fileID: 4935489091344021941}
 --- !u!54 &7397843252582696524
 Rigidbody:

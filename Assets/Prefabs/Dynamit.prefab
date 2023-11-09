@@ -325,7 +325,8 @@ MonoBehaviour:
   _affectRadius: 1.25
   _forceValue: 500
   _affectArea: {fileID: 6613238924138875115}
-  _affectPrefab: {fileID: 0}
+  _affectPrefab: {fileID: 2398608829508964987, guid: f387ac791007951459ed6a93dfa675bf,
+    type: 3}
   _animator: {fileID: 6188719503771786383}
 --- !u!54 &3068190640318853301
 Rigidbody:

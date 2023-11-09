@@ -12,9 +12,15 @@ public class CollapseManager : MonoBehaviour
             item.Init(this);
         }
     }
-    public void Collapse(ActiveItem activeItemA, ActiveItem actibeItemB)
+    public void Collapse(ActiveItem activeItemA, ActiveItem activeItemB)
+    
     {
-        StartCoroutine(CollapseProcess(activeItemA, actibeItemB));
+        if(activeItemA.transform.position.y < activeItemB.transform.position.y) 
+        {
+            ChangeItems(ref activeItemA, ref activeItemB);
+        }
+
+        StartCoroutine(CollapseProcess(activeItemA, activeItemB));
     }
 
     IEnumerator CollapseProcess(ActiveItem acitiveItemA, ActiveItem activeItemB)
@@ -29,6 +35,13 @@ public class CollapseManager : MonoBehaviour
         Destroy(acitiveItemA.gameObject);
 
         activeItemB.DoEffect();       
+    }
+
+    void ChangeItems(ref ActiveItem activeItemA, ref ActiveItem activeItemB)
+    {
+        ActiveItem change = activeItemA;
+        activeItemA = activeItemB;
+        activeItemB = change;
     }
 
     
