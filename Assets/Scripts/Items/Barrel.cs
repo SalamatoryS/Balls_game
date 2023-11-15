@@ -10,6 +10,7 @@ public class Barrel : PassiveItem
         base.Affect();
         if(_dieEffect != null)
             Instantiate(_dieEffect, transform.position, Quaternion.Euler(-90f,0f,0f));
+        ScoreManager.instance.AddScore(ItemType, transform.position);
         Destroy(gameObject);
     }
 }

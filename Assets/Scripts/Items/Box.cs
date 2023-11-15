@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Box : PassiveItem
 {
@@ -39,6 +40,7 @@ public class Box : PassiveItem
 
     private void Die()
     {
+        ScoreManager.instance.AddScore(ItemType, transform.position);
         Destroy(gameObject);
     }
 }

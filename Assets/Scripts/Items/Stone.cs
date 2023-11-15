@@ -18,6 +18,10 @@ public class Stone : PassiveItem
                 CreateChildStone(_level - 1);
             }
         }
+        else
+        {
+            ScoreManager.instance.AddScore(ItemType, transform.position);
+        }
         Die();
     }
 

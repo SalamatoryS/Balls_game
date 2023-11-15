@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ActiveItem : MonoBehaviour
+public class ActiveItem : Item
 {
     public int level;
     public bool active = true;
