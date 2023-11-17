@@ -12,6 +12,9 @@ public class ActiveItem : Item
     [SerializeField] protected SphereCollider _trigger;
     [SerializeField] protected Rigidbody _rigidbody;
     protected CollapseManager _collapseManager;
+    
+    protected int numberToWin;
+
 
     protected virtual void OnValidate()
     {
@@ -28,6 +31,7 @@ public class ActiveItem : Item
         level = lvl;
         int number = (int)Mathf.Pow(2, lvl + 1);
         _text.text = number.ToString();
+        numberToWin = number;
     }
 
     public void Deactivate()

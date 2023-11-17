@@ -9,11 +9,22 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] TMP_Text _levelText;
     private void Start()
     {
-        _levelText.text ="Уровень " + (Progress.Instance.level + 1).ToString();
+        SetLevelInMenu();
     }
     public void StartLevel()
     {
         int level = Progress.Instance.level;
         SceneManager.LoadScene(level + 1);
+    }
+
+    public void ResetProgress()
+    {
+        Progress.Instance.SetLevel(0);
+        SetLevelInMenu();
+    }
+
+    void SetLevelInMenu()
+    {
+        _levelText.text = "Уровень " + (Progress.Instance.level + 1).ToString();
     }
 }

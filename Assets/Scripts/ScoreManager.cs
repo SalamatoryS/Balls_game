@@ -15,6 +15,9 @@ public class ScoreManager : MonoBehaviour
     
     public static ScoreManager instance;
 
+    private int _ballTask;
+    private int _ballIndex;
+
     private void Awake()
     {
         if (instance == null)
@@ -38,12 +41,18 @@ public class ScoreManager : MonoBehaviour
             TaskIcon newTaskIcon =  Instantiate(_taskIconPrefab, _parent);
             newTaskIcon.Setup(_level.tasks[i].itemType, _level.tasks[i].number);
             taskIcons[i] = newTaskIcon;
+            
+            if (taskIcons[i].itemType == ItemType.Ball)
+            {
+                _ballTask = taskIcons[i].currentScore;
+                _ballIndex = i;
+            }
         }
     }
 
     public void AddScore(ItemType itemType, Vector3 position)
     {
-        for (int i = 0;i <taskIcons.Length;i++)
+        for (int i = 0;i < taskIcons.Length;i++)
         {
             if (taskIcons[i].itemType == itemType)
             {
@@ -52,6 +61,15 @@ public class ScoreManager : MonoBehaviour
                     StartCoroutine(FlyAnimation(taskIcons[i], position));
                 }
             }
+        }
+    }
+
+    public void CheckBall(int ballNumber, Vector3 position)
+    {
+        if (ballNumber == _ballTask)
+        {
+            taskIcons[_ballIndex].currentScore = 0;
+            StartCoroutine(FlyAnimation(taskIcons[_ballIndex], position));
         }
     }
 
@@ -75,8 +93,8 @@ public class ScoreManager : MonoBehaviour
     }
 
     void CheckWin()
-    {
-        for (int i =0;i<taskIcons.Length; i++)
+    {      
+        for (int i =0; i < taskIcons.Length; i++)
         {
             if (taskIcons[i].currentScore != 0)
             {

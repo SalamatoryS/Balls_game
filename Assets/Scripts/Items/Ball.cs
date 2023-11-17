@@ -24,7 +24,7 @@ public class Ball : ActiveItem
     public override void SetLevel(int lvl)
     {
         base.SetLevel(lvl);
-
+        
         radius = Mathf.Lerp(0.4f, 0.7f, lvl / 10f);
         Vector3 ballScale = Vector3.one * radius * 2f;
         _visualTransform.localScale = ballScale;
@@ -57,6 +57,7 @@ public class Ball : ActiveItem
         base.DoEffect();
         IncreaseLevel();
         AffectPassiveItems(transform.position, radius);
+        ScoreManager.instance.CheckBall(numberToWin, transform.position);
     }
     private void AffectPassiveItems(Vector3 position, float radius)
     {
