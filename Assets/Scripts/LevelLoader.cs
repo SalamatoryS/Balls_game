@@ -14,7 +14,7 @@ public class LevelLoader : MonoBehaviour
     public void StartLevel()
     {
         int level = Progress.Instance.level;
-        SceneManager.LoadScene(level + 1);
+        SceneManager.LoadScene(level + 2);
     }
 
     public void ResetProgress()
@@ -25,6 +25,15 @@ public class LevelLoader : MonoBehaviour
 
     void SetLevelInMenu()
     {
-        _levelText.text = "”Ó‚ÂÌ¸ " + (Progress.Instance.level + 1).ToString();
+        string level;
+        if (LanguageManager.Instance.currentLanguage == "en")
+        {
+            level = "LEVEL ";
+        }
+        else
+        {
+            level = "”–Œ¬≈Õ‹ ";
+        }
+        _levelText.text = level + (Progress.Instance.level + 1).ToString();
     }
 }

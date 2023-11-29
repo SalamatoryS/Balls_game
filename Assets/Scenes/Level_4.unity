@@ -885,9 +885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tasks:
   - itemType: 1
-    number: 512
+    number: 256
   - itemType: 2
-    number: 8
+    number: 6
 --- !u!1 &6548723933745116739
 GameObject:
   m_ObjectHideFlags: 0

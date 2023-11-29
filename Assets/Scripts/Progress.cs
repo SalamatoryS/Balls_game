@@ -6,11 +6,14 @@ using UnityEngine;
 public class ProgressData
 {
     public int level;
+    public int completedLevels = 0;
 }
 
 public class Progress : MonoBehaviour
 {
     public int level;
+
+    public int completeLevels;
 
     public static Progress Instance;
 
@@ -34,10 +37,16 @@ public class Progress : MonoBehaviour
         Save();
     }
 
+    public void IncreaseCompletedLevels()
+    {
+        completeLevels++;
+    }
+
     void Save()
     {
         ProgressData data = new ProgressData();
         data.level = level;
+        data.completedLevels = completeLevels;
         string json = JsonUtility.ToJson(data);
         PlayerPrefs.SetString("Progress", json);
     }
@@ -49,6 +58,7 @@ public class Progress : MonoBehaviour
             string json = PlayerPrefs.GetString("Progress");
             ProgressData data = JsonUtility.FromJson<ProgressData>(json);
             level = data.level;
+            completeLevels = data.completedLevels;
         }
     }
 }
